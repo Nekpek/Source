@@ -1,0 +1,71 @@
+Naturalis - the easy way for nature.
+
+Install Instructions.
+_____________________________________________________________________
+1. First install forge
+2. run minecraft
+3. add Naturalis inside the mods folder
+\____________________________________________________________________/
+
+ChangeLog:
+______________________________________________________________________
+Pub_Re-1
+First public release of the mod.
+Bugs:
+Have Salt in it but there is no use for salt yet
+
+Pub_Re-2:
+[Added] Salted pork
+[Added] Salted Beef
+[Added] Barkless Birch Log
+[Added] Birch bark
+[Added] Rotting Bark
+[Added] bast Fibre
+[Added] Bucket of Chocomilk
+[Added] Chocomilk
+
+[Changed] Recipe for Long-handled Hatchet
+[Changed] Name for "cork Plating" to "Cork Leather"
+Bugs
+you can see through Rotten bark and block behind become see through.
+Blocks up against Rotten Bark sorta disappears
+no drop from Bark less birch.
+no Hunger restored when drinking Chocomilk.
+you only got back your glass bottle for the last drunk Chocomilk.
+
+Pub_Re2-Fx1
+[Fix] for see through Rotten bark
+[Fix] for Block up against Rotten Bark sorta disappears
+[Fix] for no drop from Bark less birch
+[Fix] for no Hunger restored when drinking Chocomilk
+[Fix] for you only got back your glass bottle for the last drunk Chocomilk
+[Changed] Size of rotten bark to look more like bark.
+[Changed] name of current salt to "Sea Salt"
+[Changed] size of Barkless logs to symbolize it lost its bark.
+[Added] Salt ore (spawns from 52 and under in veins of 10 require shovel to mine optimally)
+[Added] Rock Salt, Works just like sea salt.
+
+Pub_Re3 (1.3)
+[Added] Mcmod.info
+[Added] Bucket of Birch Bark.
+[Added] Tar. 
+[Added] Raw Squid legs.
+[Added] Breaded Squid legs.
+[Added] Fried Squid legs.
+[Added] Cork wall
+[Added] SeaWeed
+
+1.3.1
+[FIXED] Recipes For Leather 
+
+
+1.4
+[Added] Power Furnace*
+[Added] Creative tab containing all items of the mod
+[Added] Creative tab containing all Blocks of the mod
+[Removed] old creative tab
+[Removed] Left over code of tar sands.
+
+*no crafting recipe, does not require fuel, 2x cook speed, experimental state.
+
+\____________________________________________________________________/

@@ -1,0 +1,26 @@
+[
+{
+  "modid": "Naturalis",
+  "name": "Naturalis",
+  "description": "The easy way for nature.",
+  "version": "1.3",
+  "mcversion": "1.6.2",
+  "url": "",
+  "updateUrl": "",
+  "authors": [
+    "Nekpek",
+	"Jubii31",
+	"DeadCompany",
+	"Gnome_san1337"
+  ],
+  "credits":
+    "Coder: Nekpek; Texture: Jubii31; Bug Hunters: DeadCompany, Gnome_san1337"
+  ,
+  "logoFile": "/logo_Nat.png",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
