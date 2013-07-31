@@ -13,9 +13,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileEntityNaturalisFurnace extends TileEntity implements ISidedInventory
     {
-        private static final int[] slots_top = new int[] { 0 };
-        private static final int[] slots_bottom = new int[] { 2, 1 };
-        private static final int[] slots_sides = new int[] { 1 };
+        private static final int[] slots_top = new int[] { 0, 3 };
+        private static final int[] slots_bottom = new int[] { 2, 4 };
+        private static final int[] slots_sides = new int[] { 0, 2, 3, 4 };
 
         /**
          * The ItemStacks that hold the items currently being used in the
@@ -505,4 +505,5 @@ public class TileEntityNaturalisFurnace extends TileEntity implements ISidedInve
             {
                 return par3 != 0 || par1 != 1 || par2ItemStack.itemID == Item.bucketEmpty.itemID;
             }
+
     }

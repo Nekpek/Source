@@ -158,6 +158,7 @@ public class BlockNaturalisPowerFurnace extends BlockContainer
                 if (par0)
                     {
                         par1World.setBlock(par2, par3, par4, Naturalis.NaturalisPowerFurnaceLit.blockID);
+
                     }
                 else
                     {
@@ -193,25 +194,25 @@ public class BlockNaturalisPowerFurnace extends BlockContainer
                         if (l == 4)
                             {
                                 par1World.spawnParticle("smoke", f - f3, f1, f2 + f4, 0.0D, 0.0D, 0.0D);
-                                par1World.spawnParticle("flame", f - f3, f1, f2 + f4, 0.0D, 0.0D, 0.0D);
+                                par1World.spawnParticle("reddust", f - f3, f1, f2 + f4, 0.0D, 0.0D, 0.0D);
                             }
                         else
                             if (l == 5)
                                 {
                                     par1World.spawnParticle("smoke", f + f3, f1, f2 + f4, 0.0D, 0.0D, 0.0D);
-                                    par1World.spawnParticle("flame", f + f3, f1, f2 + f4, 0.0D, 0.0D, 0.0D);
+                                    par1World.spawnParticle("reddust", f + f3, f1, f2 + f4, 0.0D, 0.0D, 0.0D);
                                 }
                             else
                                 if (l == 2)
                                     {
                                         par1World.spawnParticle("smoke", f + f4, f1, f2 - f3, 0.0D, 0.0D, 0.0D);
-                                        par1World.spawnParticle("flame", f + f4, f1, f2 - f3, 0.0D, 0.0D, 0.0D);
+                                        par1World.spawnParticle("reddust", f + f4, f1, f2 - f3, 0.0D, 0.0D, 0.0D);
                                     }
                                 else
                                     if (l == 3)
                                         {
                                             par1World.spawnParticle("smoke", f + f4, f1, f2 + f3, 0.0D, 0.0D, 0.0D);
-                                            par1World.spawnParticle("flame", f + f4, f1, f2 + f3, 0.0D, 0.0D, 0.0D);
+                                            par1World.spawnParticle("reddust", f + f4, f1, f2 + f3, 0.0D, 0.0D, 0.0D);
                                         }
                     }
             }

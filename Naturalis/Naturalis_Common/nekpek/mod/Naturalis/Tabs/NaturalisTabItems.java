@@ -16,7 +16,7 @@ public class NaturalisTabItems extends CreativeTabs
         @SideOnly(Side.CLIENT)
         public int getTabIconItemIndex()
             {
-                return Naturalis.NaturalisLeather.itemID;
+                return Naturalis.NaturalisCork.itemID;
             }
 
         @Override

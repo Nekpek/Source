@@ -3,6 +3,7 @@ package nekpek.mod.Naturalis.common;
 import nekpek.mod.Naturalis.Generation.NaturalisWorldGeneration;
 import nekpek.mod.Naturalis.Gui.GuiHandler;
 import nekpek.mod.Naturalis.Mobs.NaturalisDrops;
+import nekpek.mod.Naturalis.Tabs.NaturalisTabBlocks;
 import nekpek.mod.Naturalis.Tabs.NaturalisTabItems;
 import nekpek.mod.Naturalis.blocks.BlockNaturalisBirchBare;
 import nekpek.mod.Naturalis.blocks.BlockNaturalisCorkWall;
@@ -96,7 +97,7 @@ public class Naturalis
 
         public static EnumToolMaterial NaturalisTools = EnumHelper.addToolMaterial("Naturalis", 2, 250, 6.0F, 2, 14);
         public static CreativeTabs NaturalisTabItems = new NaturalisTabItems(CreativeTabs.getNextID(), "NaturalisTabItems");
-        public static CreativeTabs NaturalisTabBlocks = new NaturalisTabItems(CreativeTabs.getNextID(), "NaturalisTabBlocks");
+        public static CreativeTabs NaturalisTabBlocks = new NaturalisTabBlocks(CreativeTabs.getNextID(), "NaturalisTabBlocks");
         public static NaturalisWorldGeneration Genworld = new NaturalisWorldGeneration();
 
         @EventHandler
@@ -190,6 +191,9 @@ public class Naturalis
 
                 // LOADING COSTUM MOB DROPS
                 MinecraftForge.EVENT_BUS.register(new NaturalisDrops());
+
+                // LOADING SOUNDS
+                MinecraftForge.EVENT_BUS.register(new NaturalisSound());
 
                 // LOADING WORLD GENERATOR
                 GameRegistry.registerWorldGenerator(Genworld);
