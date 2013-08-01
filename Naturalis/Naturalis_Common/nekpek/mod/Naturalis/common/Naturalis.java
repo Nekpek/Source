@@ -133,7 +133,7 @@ public class Naturalis
                 NaturalisCorkWall = new BlockNaturalisCorkWall(1106, Material.wood).setUnlocalizedName("NaturalisCorkWall").setHardness(2.0f).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
                 NaturalisSeaWeed = new BlockNaturalisSeaWeed(1107, Material.water).setUnlocalizedName("NaturalisSeaWeed").setHardness(0.4f).setCreativeTab(NaturalisTabBlocks);
                 NaturalisPowerFurnaceIdle = new BlockNaturalisPowerFurnace(1109, false).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceIdle").setCreativeTab(NaturalisTabBlocks);
-                NaturalisPowerFurnaceLit = new BlockNaturalisPowerFurnace(1110, true).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceLit").setCreativeTab(NaturalisTabBlocks);
+                NaturalisPowerFurnaceLit = new BlockNaturalisPowerFurnace(1110, true).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceLit");
 
                 // ADDING NAMES TO THE ITEMS AND BLOCKS
                 LanguageRegistry.addName(NaturalisSalt, "Sea Salt");
@@ -191,9 +191,6 @@ public class Naturalis
 
                 // LOADING COSTUM MOB DROPS
                 MinecraftForge.EVENT_BUS.register(new NaturalisDrops());
-
-                // LOADING SOUNDS
-                MinecraftForge.EVENT_BUS.register(new NaturalisSound());
 
                 // LOADING WORLD GENERATOR
                 GameRegistry.registerWorldGenerator(Genworld);
