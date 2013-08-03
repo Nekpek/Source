@@ -1,5 +1,7 @@
 package nekpek.mod.Naturalis.common;
 
+import nekpek.mod.Naturalis.Entity.EntityNaturalisFish;
+import nekpek.mod.Naturalis.Entity.NaturalisEntity;
 import nekpek.mod.Naturalis.Generation.NaturalisWorldGeneration;
 import nekpek.mod.Naturalis.Gui.GuiHandler;
 import nekpek.mod.Naturalis.Mobs.NaturalisDrops;
@@ -32,24 +34,30 @@ import nekpek.mod.Naturalis.items.ItemNaturalisSaltedPork;
 import nekpek.mod.Naturalis.items.ItemNaturalisScraper;
 import nekpek.mod.Naturalis.items.ItemNaturalisTar;
 import nekpek.mod.Naturalis.items.ItemNaturalisTarBucket;
+import nekpek.mod.Naturalis.models.NaturalisFish;
+import nekpek.mod.Naturalis.render.RenderNaturalisFish;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -135,6 +143,13 @@ public class Naturalis
                 NaturalisPowerFurnaceIdle = new BlockNaturalisPowerFurnace(1109, false).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceIdle").setCreativeTab(NaturalisTabBlocks);
                 NaturalisPowerFurnaceLit = new BlockNaturalisPowerFurnace(1110, true).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceLit");
 
+                // MOBS
+                EntityRegistry.registerGlobalEntityID(EntityNaturalisFish.class, "Fish", 1);
+                EntityRegistry.addSpawn(EntityNaturalisFish.class, 10, 5, 12, EnumCreatureType.waterCreature, BiomeGenBase.ocean);
+                EntityRegistry.findGlobalUniqueEntityId();
+                NaturalisEntity.registerEntityEgg(EntityNaturalisFish.class, 0x0FF7700, 0x0000000);
+                RenderingRegistry.registerEntityRenderingHandler(EntityNaturalisFish.class, new RenderNaturalisFish(new NaturalisFish(), 0.3f));
+
                 // ADDING NAMES TO THE ITEMS AND BLOCKS
                 LanguageRegistry.addName(NaturalisSalt, "Sea Salt");
                 LanguageRegistry.addName(NaturalisSalt2, "Rock Salt");
@@ -164,6 +179,7 @@ public class Naturalis
                 LanguageRegistry.addName(NaturalisSeaWeed, "Sea Weed");
                 LanguageRegistry.addName(NaturalisPowerFurnaceIdle, "Powered Furnace");
                 LanguageRegistry.addName(NaturalisPowerFurnaceLit, "Powered Furnaced");
+                LanguageRegistry.instance().addStringLocalization("entity.Fish.name", "Fish");
 
                 // REGISTER BLOCKS AND SET MINING LEVELS
                 MinecraftForge.setBlockHarvestLevel(NaturalisRottingBark0, "axe", 0);
