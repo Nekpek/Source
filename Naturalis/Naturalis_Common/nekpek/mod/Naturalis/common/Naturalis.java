@@ -19,13 +19,16 @@ import nekpek.mod.Naturalis.blocks.BlockNaturalisSeaWeed;
 import nekpek.mod.Naturalis.blocks.TileEntityNaturalisFurnace;
 import nekpek.mod.Naturalis.items.ItemNaturalisBastFibre;
 import nekpek.mod.Naturalis.items.ItemNaturalisBirchBark;
+import nekpek.mod.Naturalis.items.ItemNaturalisBreadDough;
 import nekpek.mod.Naturalis.items.ItemNaturalisBucketSalt;
 import nekpek.mod.Naturalis.items.ItemNaturalisChocoBucket;
 import nekpek.mod.Naturalis.items.ItemNaturalisChocoMilk;
 import nekpek.mod.Naturalis.items.ItemNaturalisCookedSquid;
 import nekpek.mod.Naturalis.items.ItemNaturalisCork;
+import nekpek.mod.Naturalis.items.ItemNaturalisFishSushi;
 import nekpek.mod.Naturalis.items.ItemNaturalisFlouredSquid;
 import nekpek.mod.Naturalis.items.ItemNaturalisLeather;
+import nekpek.mod.Naturalis.items.ItemNaturalisNoriSheet;
 import nekpek.mod.Naturalis.items.ItemNaturalisRawCork;
 import nekpek.mod.Naturalis.items.ItemNaturalisRawSquid;
 import nekpek.mod.Naturalis.items.ItemNaturalisSalt;
@@ -34,6 +37,8 @@ import nekpek.mod.Naturalis.items.ItemNaturalisSaltedPork;
 import nekpek.mod.Naturalis.items.ItemNaturalisScraper;
 import nekpek.mod.Naturalis.items.ItemNaturalisTar;
 import nekpek.mod.Naturalis.items.ItemNaturalisTarBucket;
+import nekpek.mod.Naturalis.items.ItemNaturalisWheatFlour;
+import nekpek.mod.Naturalis.items.ItemNaturlisSquidSushi;
 import nekpek.mod.Naturalis.models.NaturalisFish;
 import nekpek.mod.Naturalis.render.RenderNaturalisFish;
 import net.minecraft.block.Block;
@@ -89,6 +94,11 @@ public class Naturalis
         public static Item NaturalisRawSquid;
         public static Item NaturalisFlouredSquid;
         public static Item NaturalisCookedSquid;
+        public static Item NaturalisSquidSushi;
+        public static Item NaturalisFishSushi;
+        public static Item NaturalisNoriSheet;
+        public static Item NaturalisWheatFlour;
+        public static Item NaturalisBreadDough;
 
         public static Block NaturalisRottingBark0;
         public static Block NaturalisRottingBark1;
@@ -96,7 +106,6 @@ public class Naturalis
         public static Block NaturalisOakBare;
         public static Block NaturalisBirchBare;
         public static Block NaturalisSaltOre;
-        public static Block NaturalisTarSand;
         public static Block NaturalisCorkWall;
         public static Block NaturalisSeaWeed;
 
@@ -130,6 +139,11 @@ public class Naturalis
                 NaturalisRawSquid = new ItemNaturalisRawSquid(1015, 3, 0.4f, true).setUnlocalizedName("NaturalisRawSquid").setCreativeTab(NaturalisTabItems);
                 NaturalisFlouredSquid = new ItemNaturalisFlouredSquid(1016).setUnlocalizedName("NaturalisFlouredSquid").setCreativeTab(NaturalisTabItems);
                 NaturalisCookedSquid = new ItemNaturalisCookedSquid(1017, 9, 0.9f, true).setUnlocalizedName("NaturalisCookedSquid").setCreativeTab(NaturalisTabItems);
+                NaturalisSquidSushi = new ItemNaturlisSquidSushi(1018, 8, 0.8f, true).setUnlocalizedName("NaturalisSquidSushi").setCreativeTab(NaturalisTabItems);
+                NaturalisFishSushi = new ItemNaturalisFishSushi(1019, 8, 0.8f, true).setUnlocalizedName("NaturalisFishSushi").setCreativeTab(NaturalisTabItems);
+                NaturalisNoriSheet = new ItemNaturalisNoriSheet(1020).setUnlocalizedName("NaturalisNoriSheet").setCreativeTab(NaturalisTabItems);
+                NaturalisWheatFlour = new ItemNaturalisWheatFlour(1021).setUnlocalizedName("NaturalisWheatFlour").setCreativeTab(NaturalisTabItems);
+                NaturalisBreadDough = new ItemNaturalisBreadDough(1022).setUnlocalizedName("NatualisBreadDough").setCreativeTab(NaturalisTabItems);
 
                 // BLOCKS
                 NaturalisRottingBark0 = new BlockNaturalisRottingBark0(1102, Material.wood).setUnlocalizedName("NaturalisRottingBark0").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
@@ -147,17 +161,15 @@ public class Naturalis
                 EntityRegistry.registerGlobalEntityID(EntityNaturalisFish.class, "Fish", 1);
                 EntityRegistry.addSpawn(EntityNaturalisFish.class, 10, 5, 12, EnumCreatureType.waterCreature, BiomeGenBase.ocean);
                 EntityRegistry.findGlobalUniqueEntityId();
-                NaturalisEntity.registerEntityEgg(EntityNaturalisFish.class, 0x0FF7700, 0x0000000);
+                NaturalisEntity.registerEntityEgg(EntityNaturalisFish.class, 0x0FF7700, 0x0FFC592);
                 RenderingRegistry.registerEntityRenderingHandler(EntityNaturalisFish.class, new RenderNaturalisFish(new NaturalisFish(), 0.3f));
 
-                // ADDING NAMES TO THE ITEMS AND BLOCKS
+                // REGISTERING NAMES TO ITEMS
                 LanguageRegistry.addName(NaturalisSalt, "Sea Salt");
                 LanguageRegistry.addName(NaturalisSalt2, "Rock Salt");
                 LanguageRegistry.addName(NaturalisBucketSalt, "Bucket of Salt");
                 LanguageRegistry.addName(NaturalisLeather, "Cork Leather");
                 LanguageRegistry.addName(NaturalisScraper, "Long Handled Hatchet");
-                LanguageRegistry.addName(NaturalisOakBare, "Barkless Oak Log");
-                LanguageRegistry.addName(NaturalisBirchBare, "Barkless Birch Log");
                 LanguageRegistry.addName(NaturalisCork, "Cork");
                 LanguageRegistry.addName(NaturalisRawCork, "Raw Cork");
                 LanguageRegistry.addName(NaturalisSaltedBeef, "Salted Beef");
@@ -166,38 +178,58 @@ public class Naturalis
                 LanguageRegistry.addName(NaturalisChocoMilk, "Chocomilk");
                 LanguageRegistry.addName(NaturalisBirchBark, "Birch Bark");
                 LanguageRegistry.addName(NaturalisBastFibre, "Bast Fibre");
+                LanguageRegistry.addName(NaturalisTarBucket, "Bucket of Birch Bark");
+                LanguageRegistry.addName(NaturalisTar, "Tar");
+                LanguageRegistry.addName(NaturalisRawSquid, "Raw Squid legs");
+                LanguageRegistry.addName(NaturalisFlouredSquid, "Breaded Squid legs");
+                LanguageRegistry.addName(NaturalisCookedSquid, "Fried Squid legs");
+                LanguageRegistry.addName(NaturalisSquidSushi, "Squid roll");
+                LanguageRegistry.addName(NaturalisFishSushi, "Fish roll");
+                LanguageRegistry.addName(NaturalisNoriSheet, "Nori Sheet");
+                LanguageRegistry.addName(NaturalisWheatFlour, "Flour");
+                LanguageRegistry.addName(NaturalisBreadDough, "Dough");
+
+                // REGISERING NAMES TO EGG
+                LanguageRegistry.instance().addStringLocalization("entity.Fish.name", "Fish");
+
+                // REGISTERING NAMES TO BLOCKS
+                LanguageRegistry.addName(NaturalisOakBare, "Barkless Oak Log");
+                LanguageRegistry.addName(NaturalisBirchBare, "Barkless Birch Log");
                 LanguageRegistry.addName(NaturalisSaltOre, "Rock Salt");
                 LanguageRegistry.addName(NaturalisRottingBark0, "Rotting Bark");
                 LanguageRegistry.addName(NaturalisRottingBark1, "Rotting Bark MidTerm");
                 LanguageRegistry.addName(NaturalisRottingBark2, "Rotting Bark End");
-                LanguageRegistry.addName(NaturalisTarBucket, "Bucket of Birch Bark");
-                LanguageRegistry.addName(NaturalisTar, "Tar");
                 LanguageRegistry.addName(NaturalisCorkWall, "Cork Wall");
-                LanguageRegistry.addName(NaturalisRawSquid, "Raw Squid legs");
-                LanguageRegistry.addName(NaturalisFlouredSquid, "Breaded Squid legs");
-                LanguageRegistry.addName(NaturalisCookedSquid, "Fried Squid legs");
                 LanguageRegistry.addName(NaturalisSeaWeed, "Sea Weed");
                 LanguageRegistry.addName(NaturalisPowerFurnaceIdle, "Powered Furnace");
                 LanguageRegistry.addName(NaturalisPowerFurnaceLit, "Powered Furnaced");
-                LanguageRegistry.instance().addStringLocalization("entity.Fish.name", "Fish");
 
                 // REGISTER BLOCKS AND SET MINING LEVELS
+                // - ROTTING BARK 1
                 MinecraftForge.setBlockHarvestLevel(NaturalisRottingBark0, "axe", 0);
                 GameRegistry.registerBlock(NaturalisRottingBark0, "NaturalisRottingBark0");
+                // - ROTTING BARK 2
                 MinecraftForge.setBlockHarvestLevel(NaturalisRottingBark1, null, 100);
                 GameRegistry.registerBlock(NaturalisRottingBark1, "NaturalisRottingBark1");
+                // - ROTTING BARK 3
                 MinecraftForge.setBlockHarvestLevel(NaturalisRottingBark2, "axe", 0);
                 GameRegistry.registerBlock(NaturalisRottingBark2, "NaturalisRottingBark2");
+                // - BARKLESS OAK
                 MinecraftForge.setBlockHarvestLevel(NaturalisOakBare, "axe", 0);
                 GameRegistry.registerBlock(NaturalisOakBare, "NaturalisOakBare");
+                // - BARKLESS BIRCH
                 MinecraftForge.setBlockHarvestLevel(NaturalisBirchBare, "axe", 0);
                 GameRegistry.registerBlock(NaturalisBirchBare, "NaturalisBirchBare");
+                // - SALT ORE
                 MinecraftForge.setBlockHarvestLevel(NaturalisSaltOre, "shovel", 1);
                 GameRegistry.registerBlock(NaturalisSaltOre, "NaturalisSaltOre");
+                // - CORK WALL
                 MinecraftForge.setBlockHarvestLevel(NaturalisCorkWall, "axe", 0);
                 GameRegistry.registerBlock(NaturalisCorkWall, "NaturalisCorkWall");
+                // - SEA WEED
                 MinecraftForge.setBlockHarvestLevel(NaturalisSeaWeed, null, 0);
                 GameRegistry.registerBlock(NaturalisSeaWeed, "NaturalisSeaWeed");
+                // - POWERED FURNACE
                 MinecraftForge.setBlockHarvestLevel(NaturalisPowerFurnaceIdle, "pickaxe", 0);
                 MinecraftForge.setBlockHarvestLevel(NaturalisPowerFurnaceLit, "pickaxe", 0);
                 GameRegistry.registerBlock(NaturalisPowerFurnaceIdle, "NaturalisPowerFurnaceIdle");
@@ -210,7 +242,8 @@ public class Naturalis
 
                 // LOADING WORLD GENERATOR
                 GameRegistry.registerWorldGenerator(Genworld);
-                // LOADING COSTUME FUELS
+
+                // LOADING COSTUM FUELS
                 GameRegistry.registerFuelHandler(new NaturalisFuel());
 
                 // ADDING NAMES TO THE OREDICTIONARY
@@ -224,6 +257,7 @@ public class Naturalis
                 GameRegistry.addSmelting(Item.bucketWater.itemID, new ItemStack(NaturalisBucketSalt), 0.1f);
                 GameRegistry.addSmelting(NaturalisTarBucket.itemID, new ItemStack(NaturalisTar, 4), 0.1f);
                 GameRegistry.addSmelting(NaturalisFlouredSquid.itemID, new ItemStack(NaturalisCookedSquid, 1), 0.1f);
+                GameRegistry.addSmelting(NaturalisBreadDough.itemID, new ItemStack(Item.bread, 1), 0.1f);
 
                 // ADDING RECIPIES
                 GameRegistry.addRecipe(new ItemStack(NaturalisSalt, 4), new Object[] { "X", 'X', NaturalisBucketSalt });
@@ -234,27 +268,33 @@ public class Naturalis
                 GameRegistry.addRecipe(new ItemStack(NaturalisCork, 4), new Object[] { "X", 'X', NaturalisRawCork });
                 GameRegistry.addRecipe(new ItemStack(Item.silk, 1), new Object[] { "X", "X", "X", 'X', NaturalisBastFibre });
                 GameRegistry.addRecipe(new ItemStack(Block.torchWood, 4), new Object[] { "X", "*", 'X', NaturalisTar, '*', Item.stick });
-                GameRegistry.addRecipe(new ItemStack(NaturalisFlouredSquid, 1), new Object[] { "X*X", 'X', Item.wheat, '*', NaturalisRawSquid });
+                GameRegistry.addRecipe(new ItemStack(NaturalisFlouredSquid, 1), new Object[] { "X*X", 'X', NaturalisBreadDough, '*', NaturalisRawSquid });
                 GameRegistry.addRecipe(new ItemStack(NaturalisPowerFurnaceIdle, 1), new Object[] { "IRI", "LFT", "IBI", 'I', Block.blockIron, 'R', Block.blockRedstone, 'L', Block.lever, 'F', Block.furnaceIdle, 'T', Block.torchRedstoneActive, 'B', Item.blazeRod });
+                GameRegistry.addRecipe(new ItemStack(NaturalisSquidSushi, 1), new Object[] { "NQN", 'N', NaturalisNoriSheet, 'Q', NaturalisRawSquid });
+                GameRegistry.addRecipe(new ItemStack(NaturalisFishSushi, 1), new Object[] { "NQN", 'N', NaturalisNoriSheet, 'Q', Item.fishRaw });
+                GameRegistry.addRecipe(new ItemStack(NaturalisNoriSheet, 9), new Object[] { "SSS", 'S', NaturalisSeaWeed });
                 /*
                  * using another type of loading a recipe because i use
                  * oreDictionary as an item reference.
                  */
                 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(NaturalisSaltedPork, 1), Item.porkRaw, "itemSalt"));
                 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(NaturalisSaltedBeef, 1), Item.beefRaw, "itemSalt"));
+                CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(NaturalisBreadDough, 5), NaturalisWheatFlour, Item.bucketWater, "itemSalt"));
+                CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(NaturalisWheatFlour, 2), Item.wheat, Item.wheat));
                 // ADDING SHAPELESS RECIPIES
                 GameRegistry.addShapelessRecipe(new ItemStack(NaturalisChocoBucket, 1), Item.sugar, new ItemStack(Item.dyePowder, 1, 3), Item.bucketMilk);
                 GameRegistry.addShapelessRecipe(new ItemStack(NaturalisChocoMilk, 3), Item.glassBottle, Item.glassBottle, Item.glassBottle, NaturalisChocoBucket);
                 GameRegistry.addShapelessRecipe(new ItemStack(NaturalisRottingBark0, 1), NaturalisBirchBark, Item.bucketWater);
                 GameRegistry.addShapelessRecipe(new ItemStack(NaturalisTarBucket, 1), NaturalisRottingBark0, Item.bucketWater);
 
-                // REMOVING VANILLA RECIPES WITH LEATHER
+                // REMOVING VANILLA RECIPES.
                 CraftingManager.getInstance().getRecipeList().remove(Item.book);
                 CraftingManager.getInstance().getRecipeList().remove(Item.legsLeather);
                 CraftingManager.getInstance().getRecipeList().remove(Item.bootsLeather);
                 CraftingManager.getInstance().getRecipeList().remove(Item.helmetLeather);
                 CraftingManager.getInstance().getRecipeList().remove(Item.plateLeather);
                 CraftingManager.getInstance().getRecipeList().remove(Item.itemFrame);
+                CraftingManager.getInstance().getRecipeList().remove(Item.bread);
 
                 // ADDING RECIPES WITH LEATHER
                 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(Item.book, 1), Item.paper, Item.paper, Item.paper, "itemLeather"));
