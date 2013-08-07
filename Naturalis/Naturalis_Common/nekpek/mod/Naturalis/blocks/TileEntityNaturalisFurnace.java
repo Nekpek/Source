@@ -331,6 +331,7 @@ public class TileEntityNaturalisFurnace extends TileEntity implements ISidedInve
          */
         private boolean canSmelt()
             {
+
                 if (this.furnaceItemStacks[0] == null && this.furnaceItemStacks[3] == null)
                     {
                         return false;
@@ -355,6 +356,7 @@ public class TileEntityNaturalisFurnace extends TileEntity implements ISidedInve
                         int result2 = furnaceItemStacks[4].stackSize + itemstack2.stackSize;
                         return (result <= getInventoryStackLimit() && result <= itemstack.getMaxStackSize() || result2 <= getInventoryStackLimit() && result <= itemstack2.getMaxStackSize());
                     }
+
             }
 
         /**
