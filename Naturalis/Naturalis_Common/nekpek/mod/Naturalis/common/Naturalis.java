@@ -121,41 +121,41 @@ public class Naturalis
         public void load(FMLInitializationEvent event)
             {
                 // ITEMS
-                NaturalisSalt = new ItemNaturalisSalt(1000).setUnlocalizedName("NaturalisSalt").setCreativeTab(NaturalisTabItems);
-                NaturalisBucketSalt = new ItemNaturalisBucketSalt(1001).setUnlocalizedName("NaturalisBucketSalt").setCreativeTab(NaturalisTabItems).setContainerItem(Item.bucketEmpty).setMaxStackSize(16);
-                NaturalisLeather = new ItemNaturalisLeather(1002).setUnlocalizedName("NaturalisLeather").setCreativeTab(NaturalisTabItems);
-                NaturalisScraper = new ItemNaturalisScraper(1003, NaturalisTools).setUnlocalizedName("NaturalisScaper").setCreativeTab(NaturalisTabItems);
-                NaturalisCork = new ItemNaturalisCork(1004).setUnlocalizedName("NaturalisCork").setCreativeTab(NaturalisTabItems);
-                NaturalisRawCork = new ItemNaturalisRawCork(1005).setUnlocalizedName("NaturlisRawCork").setCreativeTab(NaturalisTabItems);
-                NaturalisSaltedPork = new ItemNaturalisSaltedPork(1006, 5, 0.2F, true).setUnlocalizedName("NaturalisSaltedPork").setCreativeTab(NaturalisTabItems);
-                NaturalisSaltedBeef = new ItemNaturalisSaltedBeef(1007, 5, 0.2F, true).setUnlocalizedName("NaturalisSaltedBeef").setCreativeTab(NaturalisTabItems);
-                NaturalisChocoBucket = new ItemNaturalisChocoBucket(1008).setUnlocalizedName("NaturalisChocoBucket").setCreativeTab(NaturalisTabItems).setContainerItem(Item.bucketEmpty).setMaxStackSize(16);
-                NaturalisChocoMilk = new ItemNaturalisChocoMilk(1009, 3, 0.5f, false).setUnlocalizedName("NaturalisChocoMilk").setCreativeTab(NaturalisTabItems).setMaxStackSize(9);
-                NaturalisBirchBark = new ItemNaturalisBirchBark(1010).setUnlocalizedName("NaturalisBirchBark").setCreativeTab(NaturalisTabItems);
-                NaturalisBastFibre = new ItemNaturalisBastFibre(1011).setUnlocalizedName("NaturalisBastFibre").setCreativeTab(NaturalisTabItems);
-                NaturalisSalt2 = new ItemNaturalisSalt(1012).setUnlocalizedName("NaturalisSalt2").setCreativeTab(NaturalisTabItems);
-                NaturalisTarBucket = new ItemNaturalisTarBucket(1013).setUnlocalizedName("NaturalisTarBucket").setCreativeTab(NaturalisTabItems);
-                NaturalisTar = new ItemNaturalisTar(1014).setUnlocalizedName("NaturalisTar").setCreativeTab(NaturalisTabItems);
-                NaturalisRawSquid = new ItemNaturalisRawSquid(1015, 3, 0.4f, true).setUnlocalizedName("NaturalisRawSquid").setCreativeTab(NaturalisTabItems);
-                NaturalisFlouredSquid = new ItemNaturalisFlouredSquid(1016).setUnlocalizedName("NaturalisFlouredSquid").setCreativeTab(NaturalisTabItems);
-                NaturalisCookedSquid = new ItemNaturalisCookedSquid(1017, 9, 0.9f, true).setUnlocalizedName("NaturalisCookedSquid").setCreativeTab(NaturalisTabItems);
-                NaturalisSquidSushi = new ItemNaturlisSquidSushi(1018, 8, 0.8f, true).setUnlocalizedName("NaturalisSquidSushi").setCreativeTab(NaturalisTabItems);
-                NaturalisFishSushi = new ItemNaturalisFishSushi(1019, 8, 0.8f, true).setUnlocalizedName("NaturalisFishSushi").setCreativeTab(NaturalisTabItems);
-                NaturalisNoriSheet = new ItemNaturalisNoriSheet(1020).setUnlocalizedName("NaturalisNoriSheet").setCreativeTab(NaturalisTabItems);
-                NaturalisWheatFlour = new ItemNaturalisWheatFlour(1021).setUnlocalizedName("NaturalisWheatFlour").setCreativeTab(NaturalisTabItems);
-                NaturalisBreadDough = new ItemNaturalisBreadDough(1022).setUnlocalizedName("NatualisBreadDough").setCreativeTab(NaturalisTabItems);
+                NaturalisSalt = new ItemNaturalisSalt(2300).setUnlocalizedName("NaturalisSalt").setCreativeTab(NaturalisTabItems);
+                NaturalisBucketSalt = new ItemNaturalisBucketSalt(2301).setUnlocalizedName("NaturalisBucketSalt").setCreativeTab(NaturalisTabItems).setContainerItem(Item.bucketEmpty).setMaxStackSize(16);
+                NaturalisLeather = new ItemNaturalisLeather(2302).setUnlocalizedName("NaturalisLeather").setCreativeTab(NaturalisTabItems);
+                NaturalisScraper = new ItemNaturalisScraper(2303, NaturalisTools).setUnlocalizedName("NaturalisScaper").setCreativeTab(NaturalisTabItems);
+                NaturalisCork = new ItemNaturalisCork(2304).setUnlocalizedName("NaturalisCork").setCreativeTab(NaturalisTabItems);
+                NaturalisRawCork = new ItemNaturalisRawCork(2305).setUnlocalizedName("NaturlisRawCork").setCreativeTab(NaturalisTabItems);
+                NaturalisSaltedPork = new ItemNaturalisSaltedPork(2306, 5, 0.2F, true).setUnlocalizedName("NaturalisSaltedPork").setCreativeTab(NaturalisTabItems);
+                NaturalisSaltedBeef = new ItemNaturalisSaltedBeef(2307, 5, 0.2F, true).setUnlocalizedName("NaturalisSaltedBeef").setCreativeTab(NaturalisTabItems);
+                NaturalisChocoBucket = new ItemNaturalisChocoBucket(2308).setUnlocalizedName("NaturalisChocoBucket").setCreativeTab(NaturalisTabItems).setContainerItem(Item.bucketEmpty).setMaxStackSize(16);
+                NaturalisChocoMilk = new ItemNaturalisChocoMilk(2309, 3, 0.5f, false).setUnlocalizedName("NaturalisChocoMilk").setCreativeTab(NaturalisTabItems).setMaxStackSize(9);
+                NaturalisBirchBark = new ItemNaturalisBirchBark(2310).setUnlocalizedName("NaturalisBirchBark").setCreativeTab(NaturalisTabItems);
+                NaturalisBastFibre = new ItemNaturalisBastFibre(2311).setUnlocalizedName("NaturalisBastFibre").setCreativeTab(NaturalisTabItems);
+                NaturalisSalt2 = new ItemNaturalisSalt(2312).setUnlocalizedName("NaturalisSalt2").setCreativeTab(NaturalisTabItems);
+                NaturalisTarBucket = new ItemNaturalisTarBucket(2313).setUnlocalizedName("NaturalisTarBucket").setCreativeTab(NaturalisTabItems);
+                NaturalisTar = new ItemNaturalisTar(2314).setUnlocalizedName("NaturalisTar").setCreativeTab(NaturalisTabItems);
+                NaturalisRawSquid = new ItemNaturalisRawSquid(2315, 3, 0.4f, true).setUnlocalizedName("NaturalisRawSquid").setCreativeTab(NaturalisTabItems);
+                NaturalisFlouredSquid = new ItemNaturalisFlouredSquid(2316).setUnlocalizedName("NaturalisFlouredSquid").setCreativeTab(NaturalisTabItems);
+                NaturalisCookedSquid = new ItemNaturalisCookedSquid(2317, 9, 0.9f, true).setUnlocalizedName("NaturalisCookedSquid").setCreativeTab(NaturalisTabItems);
+                NaturalisSquidSushi = new ItemNaturlisSquidSushi(2318, 8, 0.8f, true).setUnlocalizedName("NaturalisSquidSushi").setCreativeTab(NaturalisTabItems);
+                NaturalisFishSushi = new ItemNaturalisFishSushi(2319, 8, 0.8f, true).setUnlocalizedName("NaturalisFishSushi").setCreativeTab(NaturalisTabItems);
+                NaturalisNoriSheet = new ItemNaturalisNoriSheet(2320).setUnlocalizedName("NaturalisNoriSheet").setCreativeTab(NaturalisTabItems);
+                NaturalisWheatFlour = new ItemNaturalisWheatFlour(2321).setUnlocalizedName("NaturalisWheatFlour").setCreativeTab(NaturalisTabItems);
+                NaturalisBreadDough = new ItemNaturalisBreadDough(2322).setUnlocalizedName("NatualisBreadDough").setCreativeTab(NaturalisTabItems);
 
                 // BLOCKS
-                NaturalisRottingBark0 = new BlockNaturalisRottingBark0(1102, Material.wood).setUnlocalizedName("NaturalisRottingBark0").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
-                NaturalisRottingBark1 = new BlockNaturalisRottingBark1(1103, Material.wood).setUnlocalizedName("NaturalisRottingBark1").setHardness(-1.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
-                NaturalisRottingBark2 = new BlockNaturalisRottingBark2(1104, Material.wood).setUnlocalizedName("NaturalisRottingBark2").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
-                NaturalisOakBare = new BlockNaturalisOakBare(1100, Material.wood).setUnlocalizedName("NaturalisOakBare").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
-                NaturalisBirchBare = new BlockNaturalisBirchBare(1101, Material.wood).setUnlocalizedName("NaturalisBirchBare").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
-                NaturalisSaltOre = new BlockNaturalisSaltOre(1105, Material.sand).setUnlocalizedName("NaturalisSaltOre").setHardness(3.0f).setStepSound(Block.soundSandFootstep).setCreativeTab(NaturalisTabBlocks);
-                NaturalisCorkWall = new BlockNaturalisCorkWall(1106, Material.wood).setUnlocalizedName("NaturalisCorkWall").setHardness(2.0f).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
-                NaturalisSeaWeed = new BlockNaturalisSeaWeed(1107, Material.water).setUnlocalizedName("NaturalisSeaWeed").setHardness(0.4f).setCreativeTab(NaturalisTabBlocks);
-                NaturalisPowerFurnaceIdle = new BlockNaturalisPowerFurnace(1109, false).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceIdle").setCreativeTab(NaturalisTabBlocks);
-                NaturalisPowerFurnaceLit = new BlockNaturalisPowerFurnace(1110, true).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceLit");
+                NaturalisRottingBark0 = new BlockNaturalisRottingBark0(2402, Material.wood).setUnlocalizedName("NaturalisRottingBark0").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
+                NaturalisRottingBark1 = new BlockNaturalisRottingBark1(2403, Material.wood).setUnlocalizedName("NaturalisRottingBark1").setHardness(-1.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
+                NaturalisRottingBark2 = new BlockNaturalisRottingBark2(2404, Material.wood).setUnlocalizedName("NaturalisRottingBark2").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
+                NaturalisOakBare = new BlockNaturalisOakBare(2400, Material.wood).setUnlocalizedName("NaturalisOakBare").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
+                NaturalisBirchBare = new BlockNaturalisBirchBare(2401, Material.wood).setUnlocalizedName("NaturalisBirchBare").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
+                NaturalisSaltOre = new BlockNaturalisSaltOre(2405, Material.sand).setUnlocalizedName("NaturalisSaltOre").setHardness(3.0f).setStepSound(Block.soundSandFootstep).setCreativeTab(NaturalisTabBlocks);
+                NaturalisCorkWall = new BlockNaturalisCorkWall(2406, Material.wood).setUnlocalizedName("NaturalisCorkWall").setHardness(2.0f).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
+                NaturalisSeaWeed = new BlockNaturalisSeaWeed(2407, Material.water).setUnlocalizedName("NaturalisSeaWeed").setHardness(0.4f).setCreativeTab(NaturalisTabBlocks);
+                NaturalisPowerFurnaceIdle = new BlockNaturalisPowerFurnace(2409, false).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceIdle").setCreativeTab(NaturalisTabBlocks);
+                NaturalisPowerFurnaceLit = new BlockNaturalisPowerFurnace(2410, true).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceLit");
 
                 // MOBS
                 EntityRegistry.registerGlobalEntityID(EntityNaturalisFish.class, "Fish", 1);

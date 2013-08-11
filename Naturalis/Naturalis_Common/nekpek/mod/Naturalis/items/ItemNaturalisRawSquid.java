@@ -27,5 +27,4 @@ public class ItemNaturalisRawSquid extends ItemFood
                 par2List.add("\u00a77" + "Adding breading or seaweed");
                 par2List.add("\u00a77" + "should do all the tricks");
             }
-
     }

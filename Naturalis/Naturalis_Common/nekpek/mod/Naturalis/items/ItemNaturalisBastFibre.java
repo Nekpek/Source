@@ -18,6 +18,7 @@ public class ItemNaturalisBastFibre extends Item
         public void registerIcons(IconRegister iconRegister)
             {
                 itemIcon = iconRegister.registerIcon("Naturalis:NaturalisBastFibre");
+
             }
 
         @Override
