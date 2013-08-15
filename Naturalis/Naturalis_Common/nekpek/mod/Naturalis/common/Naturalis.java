@@ -29,15 +29,19 @@ import nekpek.mod.Naturalis.items.ItemNaturalisFishSushi;
 import nekpek.mod.Naturalis.items.ItemNaturalisFlouredSquid;
 import nekpek.mod.Naturalis.items.ItemNaturalisLeather;
 import nekpek.mod.Naturalis.items.ItemNaturalisNoriSheet;
+import nekpek.mod.Naturalis.items.ItemNaturalisPestle;
 import nekpek.mod.Naturalis.items.ItemNaturalisRawCork;
+import nekpek.mod.Naturalis.items.ItemNaturalisRawRockSalt;
 import nekpek.mod.Naturalis.items.ItemNaturalisRawSquid;
 import nekpek.mod.Naturalis.items.ItemNaturalisSalt;
 import nekpek.mod.Naturalis.items.ItemNaturalisSaltedBeef;
 import nekpek.mod.Naturalis.items.ItemNaturalisSaltedPork;
 import nekpek.mod.Naturalis.items.ItemNaturalisScraper;
+import nekpek.mod.Naturalis.items.ItemNaturalisStoneMortar;
 import nekpek.mod.Naturalis.items.ItemNaturalisTar;
 import nekpek.mod.Naturalis.items.ItemNaturalisTarBucket;
 import nekpek.mod.Naturalis.items.ItemNaturalisWheatFlour;
+import nekpek.mod.Naturalis.items.ItemNaturalisWoodMortar;
 import nekpek.mod.Naturalis.items.ItemNaturlisSquidSushi;
 import nekpek.mod.Naturalis.models.NaturalisFish;
 import nekpek.mod.Naturalis.render.RenderNaturalisFish;
@@ -99,6 +103,10 @@ public class Naturalis
         public static Item NaturalisNoriSheet;
         public static Item NaturalisWheatFlour;
         public static Item NaturalisBreadDough;
+        public static Item NaturalisPestle;
+        public static Item NaturalisWoodMortar;
+        public static Item NaturalisStoneMortar;
+        public static Item NaturalisRawRockSalt;
 
         public static Block NaturalisRottingBark0;
         public static Block NaturalisRottingBark1;
@@ -144,6 +152,10 @@ public class Naturalis
                 NaturalisNoriSheet = new ItemNaturalisNoriSheet(2320).setUnlocalizedName("NaturalisNoriSheet").setCreativeTab(NaturalisTabItems);
                 NaturalisWheatFlour = new ItemNaturalisWheatFlour(2321).setUnlocalizedName("NaturalisWheatFlour").setCreativeTab(NaturalisTabItems);
                 NaturalisBreadDough = new ItemNaturalisBreadDough(2322).setUnlocalizedName("NatualisBreadDough").setCreativeTab(NaturalisTabItems);
+                NaturalisPestle = new ItemNaturalisPestle(2323).setUnlocalizedName("NaturalisPestle").setCreativeTab(NaturalisTabItems).setContainerItem(NaturalisPestle);
+                NaturalisWoodMortar = new ItemNaturalisWoodMortar(2324).setUnlocalizedName("NaturalisWoodMortar").setCreativeTab(NaturalisTabItems);
+                NaturalisStoneMortar = new ItemNaturalisStoneMortar(2325).setUnlocalizedName("NaturalisStoneMortar").setCreativeTab(NaturalisTabItems);
+                NaturalisRawRockSalt = new ItemNaturalisRawRockSalt(2326).setUnlocalizedName("NatualisRawRockSalt").setCreativeTab(NaturalisTabItems);
 
                 // BLOCKS
                 NaturalisRottingBark0 = new BlockNaturalisRottingBark0(2402, Material.wood).setUnlocalizedName("NaturalisRottingBark0").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
@@ -152,7 +164,7 @@ public class Naturalis
                 NaturalisOakBare = new BlockNaturalisOakBare(2400, Material.wood).setUnlocalizedName("NaturalisOakBare").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
                 NaturalisBirchBare = new BlockNaturalisBirchBare(2401, Material.wood).setUnlocalizedName("NaturalisBirchBare").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
                 NaturalisSaltOre = new BlockNaturalisSaltOre(2405, Material.sand).setUnlocalizedName("NaturalisSaltOre").setHardness(3.0f).setStepSound(Block.soundSandFootstep).setCreativeTab(NaturalisTabBlocks);
-                NaturalisCorkWall = new BlockNaturalisCorkWall(2406, Material.wood).setUnlocalizedName("NaturalisCorkWall").setHardness(2.0f).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
+                NaturalisCorkWall = new BlockNaturalisCorkWall(2406, "null", "Naturalis:NaturalisCorkWall", Material.wood, false).setUnlocalizedName("NaturalisCorkWall").setHardness(2.0f).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
                 NaturalisSeaWeed = new BlockNaturalisSeaWeed(2407, Material.water).setUnlocalizedName("NaturalisSeaWeed").setHardness(0.4f).setCreativeTab(NaturalisTabBlocks);
                 NaturalisPowerFurnaceIdle = new BlockNaturalisPowerFurnace(2409, false).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceIdle").setCreativeTab(NaturalisTabBlocks);
                 NaturalisPowerFurnaceLit = new BlockNaturalisPowerFurnace(2410, true).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceLit");
@@ -188,6 +200,10 @@ public class Naturalis
                 LanguageRegistry.addName(NaturalisNoriSheet, "Nori Sheet");
                 LanguageRegistry.addName(NaturalisWheatFlour, "Flour");
                 LanguageRegistry.addName(NaturalisBreadDough, "Dough");
+                LanguageRegistry.addName(NaturalisPestle, "Pestle");
+                LanguageRegistry.addName(NaturalisWoodMortar, "Wooden Mortar");
+                LanguageRegistry.addName(NaturalisStoneMortar, "Stone Mortar");
+                LanguageRegistry.addName(NaturalisRawRockSalt, "Coarse Salt");
 
                 // REGISERING NAMES TO EGG
                 LanguageRegistry.instance().addStringLocalization("entity.Fish.name", "Fish");
@@ -203,6 +219,9 @@ public class Naturalis
                 LanguageRegistry.addName(NaturalisSeaWeed, "Sea Weed");
                 LanguageRegistry.addName(NaturalisPowerFurnaceIdle, "Powered Furnace");
                 LanguageRegistry.addName(NaturalisPowerFurnaceLit, "Powered Furnaced");
+
+                // REGISTER CRAFTING SPECIAL
+                GameRegistry.registerCraftingHandler(new CraftingHandler());
 
                 // REGISTER BLOCKS AND SET MINING LEVELS
                 // - ROTTING BARK 1
@@ -280,7 +299,7 @@ public class Naturalis
                 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(NaturalisSaltedPork, 1), Item.porkRaw, "itemSalt"));
                 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(NaturalisSaltedBeef, 1), Item.beefRaw, "itemSalt"));
                 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(NaturalisBreadDough, 5), NaturalisWheatFlour, Item.bucketWater, "itemSalt"));
-                CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(NaturalisWheatFlour, 2), Item.wheat, Item.wheat));
+
                 // ADDING SHAPELESS RECIPIES
                 GameRegistry.addShapelessRecipe(new ItemStack(NaturalisChocoBucket, 1), Item.sugar, new ItemStack(Item.dyePowder, 1, 3), Item.bucketMilk);
                 GameRegistry.addShapelessRecipe(new ItemStack(NaturalisChocoMilk, 3), Item.glassBottle, Item.glassBottle, Item.glassBottle, NaturalisChocoBucket);
@@ -303,6 +322,24 @@ public class Naturalis
                 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Item.helmetLeather, 1), "XXX", "X X", 'X', "itemLeather"));
                 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Item.plateLeather, 1), "X X", "XXX", "XXX", 'X', "itemLeather"));
                 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Item.itemFrame, 1), "***", "*X*", "***", 'X', "itemLeather", '*', "stickWood"));
+                // ADDING WOOD MORTAR RECIPE'S (SAME AS STONE JUST WITH WOOD)
 
+                for (int i = 0; i < NaturalisWoodMortar.getMaxDamage(); i++)
+                    {
+                        GameRegistry.addShapedRecipe(new ItemStack(NaturalisSalt2, 3), "X", "Y", "Z", 'X', new ItemStack(NaturalisWoodMortar, 1, i), 'Y', NaturalisRawRockSalt, 'Z', NaturalisPestle);
+                    }
+                for (int i = 0; i < NaturalisWoodMortar.getMaxDamage(); i++)
+                    {
+                        GameRegistry.addShapedRecipe(new ItemStack(NaturalisWheatFlour, 1), "X", "Y", "Z", 'X', new ItemStack(NaturalisWoodMortar, 1, i), 'Y', Item.wheat, 'Z', NaturalisPestle);
+                    }
+                // ADDING STONE MORTAR RECIPE'S (SAME AS WOOD JUST WITH STONE)
+                for (int i = 0; i < NaturalisStoneMortar.getMaxDamage(); i++)
+                    {
+                        GameRegistry.addShapedRecipe(new ItemStack(NaturalisSalt2, 3), "X", "Y", "Z", 'X', new ItemStack(NaturalisStoneMortar, 1, i), 'Y', NaturalisRawRockSalt, 'Z', NaturalisPestle);
+                    }
+                for (int i = 0; i < NaturalisStoneMortar.getMaxDamage(); i++)
+                    {
+                        GameRegistry.addShapedRecipe(new ItemStack(NaturalisWheatFlour, 1), "X", "Y", "Z", 'X', new ItemStack(NaturalisStoneMortar, 1, i), 'Y', Item.wheat, 'Z', NaturalisPestle);
+                    }
             }
     }

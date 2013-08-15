@@ -5,21 +5,29 @@ import java.util.Random;
 
 import nekpek.mod.Naturalis.common.Naturalis;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockNaturalisCorkWall extends Block
+public class BlockNaturalisCorkWall extends BlockPane
     {
+        @SideOnly(Side.CLIENT)
+        private Icon theIcon;
+        @SideOnly(Side.CLIENT)
+        protected Icon blockIcon;
+        private final String sideTextureIndex;
 
-        public BlockNaturalisCorkWall(int par1, Material par2Material)
+        public BlockNaturalisCorkWall(int par1, String par2Str, String par3Str, Material par4Material, boolean par5)
             {
-                super(par1, par2Material);
+                super(par1, par2Str, par3Str, par4Material, par5);
+                this.sideTextureIndex = par3Str;
             }
 
         @Override
@@ -180,6 +188,18 @@ public class BlockNaturalisCorkWall extends Block
             }
 
         @Override
+        public Icon getSideTextureIndex()
+            {
+                return this.theIcon;
+            }
+
+        @Override
+        public Icon getIcon(int par1, int par2)
+            {
+                return this.blockIcon;
+            }
+
+        @Override
         public int idDropped(int par1, Random par2Random, int par3)
             {
                 return Naturalis.NaturalisCork.itemID;
@@ -188,6 +208,8 @@ public class BlockNaturalisCorkWall extends Block
         @Override
         public void registerIcons(IconRegister iconRegister)
             {
-                blockIcon = iconRegister.registerIcon("Naturalis:NaturalisCorkWall");
+                this.blockIcon = iconRegister.registerIcon("Naturalis:NaturalisCorkWall");
+                this.theIcon = iconRegister.registerIcon("Naturalis:NaturalisCorkWall");
             }
+
     }

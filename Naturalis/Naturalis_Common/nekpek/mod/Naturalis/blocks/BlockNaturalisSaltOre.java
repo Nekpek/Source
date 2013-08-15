@@ -114,12 +114,12 @@ public class BlockNaturalisSaltOre extends Block
         @Override
         public int idDropped(int par1, Random par2Random, int par3)
             {
-                return Naturalis.NaturalisSalt2.itemID;
+                return Naturalis.NaturalisRawRockSalt.itemID;
             }
 
         @Override
         public int quantityDroppedWithBonus(int par1, Random par2Random)
             {
-                return this.quantityDropped(par2Random) + par2Random.nextInt(par1 + 5);
+                return this.quantityDropped(par2Random) + par2Random.nextInt(par1 + 3);
             }
     }
