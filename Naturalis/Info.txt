@@ -75,6 +75,16 @@ Pub_Re3 (1.3)
 [Changed] Recipe for breaded squid
 
 
+1.5
+[Added] Wood Mortar
+[Added] Stone Mortar
+[Added] Pestle
+[Added] Coarse Salt
+[Changed] Naturalis Cork wall rendering
+[Changed] Recipe for Flour
+[Changed] Drop for SaltOre (now drops Coarse Salt)
+[Changed] NaturalisCorkWall Rendering. now corners fits the hitbox
+[Changed] Some Textures for Rock Salt and Salt Ore
 
 
 \____________________________________________________________________/
