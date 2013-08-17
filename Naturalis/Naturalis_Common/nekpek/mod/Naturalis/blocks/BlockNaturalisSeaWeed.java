@@ -6,9 +6,12 @@ import nekpek.mod.Naturalis.Generation.NaturalisGenSeaWeed;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 
-public class BlockNaturalisSeaWeed extends Block
+public class BlockNaturalisSeaWeed extends Block implements IPlantable
     {
 
         public BlockNaturalisSeaWeed(int par1, Material par2Material)
@@ -77,5 +80,30 @@ public class BlockNaturalisSeaWeed extends Block
         public void registerIcons(IconRegister iconRegister)
             {
                 blockIcon = iconRegister.registerIcon("Naturalis:NaturalisSeaWeed");
+            }
+
+        @Override
+        public EnumPlantType getPlantType(World world, int x, int y, int z)
+            {
+                return EnumPlantType.Water;
+            }
+
+        @Override
+        public int getPlantID(World world, int x, int y, int z)
+            {
+
+                return blockID;
+            }
+
+        @Override
+        public int getPlantMetadata(World world, int x, int y, int z)
+            {
+                return world.getBlockMetadata(x, y, z);
+            }
+
+        @Override
+        public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+            {
+                return null;
             }
     }
