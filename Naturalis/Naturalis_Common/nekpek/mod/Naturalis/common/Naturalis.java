@@ -43,8 +43,6 @@ import nekpek.mod.Naturalis.items.ItemNaturalisTarBucket;
 import nekpek.mod.Naturalis.items.ItemNaturalisWheatFlour;
 import nekpek.mod.Naturalis.items.ItemNaturalisWoodMortar;
 import nekpek.mod.Naturalis.items.ItemNaturlisSquidSushi;
-import nekpek.mod.Naturalis.models.NaturalisFish;
-import nekpek.mod.Naturalis.render.RenderNaturalisFish;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -59,10 +57,10 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -79,6 +77,9 @@ public class Naturalis
         public static Naturalis instance = new Naturalis();
 
         private final GuiHandler guihandler = new GuiHandler();
+
+        @SidedProxy(clientSide = "nekpek.mod.Naturalis.common.ClientProxy", serverSide = "nekpek.mod.Naturalis.common.CommonProxy")
+        public static CommonProxy proxy;
 
         public static Item NaturalisSalt;
         public static Item NaturalisSalt2;
@@ -128,6 +129,7 @@ public class Naturalis
         @EventHandler
         public void load(FMLInitializationEvent event)
             {
+                proxy.registerRenderInformation();
                 // ITEMS
                 NaturalisSalt = new ItemNaturalisSalt(2300).setUnlocalizedName("NaturalisSalt").setCreativeTab(NaturalisTabItems);
                 NaturalisBucketSalt = new ItemNaturalisBucketSalt(2301).setUnlocalizedName("NaturalisBucketSalt").setCreativeTab(NaturalisTabItems).setContainerItem(Item.bucketEmpty).setMaxStackSize(16);
@@ -164,7 +166,7 @@ public class Naturalis
                 NaturalisOakBare = new BlockNaturalisOakBare(2400, Material.wood).setUnlocalizedName("NaturalisOakBare").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
                 NaturalisBirchBare = new BlockNaturalisBirchBare(2401, Material.wood).setUnlocalizedName("NaturalisBirchBare").setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
                 NaturalisSaltOre = new BlockNaturalisSaltOre(2405, Material.sand).setUnlocalizedName("NaturalisSaltOre").setHardness(3.0f).setStepSound(Block.soundSandFootstep).setCreativeTab(NaturalisTabBlocks);
-                NaturalisCorkWall = new BlockNaturalisCorkWall(2406, "null", "Naturalis:NaturalisCorkWall", Material.wood, false).setUnlocalizedName("NaturalisCorkWall").setHardness(2.0f).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
+                NaturalisCorkWall = new BlockNaturalisCorkWall(2406, "HARDCODED", "Naturalis:NaturalisCorkWall", Material.wood, false).setUnlocalizedName("NaturalisCorkWall").setHardness(2.0f).setStepSound(Block.soundWoodFootstep).setCreativeTab(NaturalisTabBlocks);
                 NaturalisSeaWeed = new BlockNaturalisSeaWeed(2407, Material.water).setUnlocalizedName("NaturalisSeaWeed").setHardness(0.4f).setCreativeTab(NaturalisTabBlocks);
                 NaturalisPowerFurnaceIdle = new BlockNaturalisPowerFurnace(2409, false).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceIdle").setCreativeTab(NaturalisTabBlocks);
                 NaturalisPowerFurnaceLit = new BlockNaturalisPowerFurnace(2410, true).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("NaturalisPoweredFurnaceLit");
@@ -174,7 +176,6 @@ public class Naturalis
                 EntityRegistry.addSpawn(EntityNaturalisFish.class, 10, 5, 12, EnumCreatureType.waterCreature, BiomeGenBase.ocean);
                 EntityRegistry.findGlobalUniqueEntityId();
                 NaturalisEntity.registerEntityEgg(EntityNaturalisFish.class, 0x0FF7700, 0x0FFC592);
-                RenderingRegistry.registerEntityRenderingHandler(EntityNaturalisFish.class, new RenderNaturalisFish(new NaturalisFish(), 0.3f));
 
                 // REGISTERING NAMES TO ITEMS
                 LanguageRegistry.addName(NaturalisSalt, "Sea Salt");
@@ -292,6 +293,7 @@ public class Naturalis
                 GameRegistry.addRecipe(new ItemStack(NaturalisSquidSushi, 1), new Object[] { "NQN", 'N', NaturalisNoriSheet, 'Q', NaturalisRawSquid });
                 GameRegistry.addRecipe(new ItemStack(NaturalisFishSushi, 1), new Object[] { "NQN", 'N', NaturalisNoriSheet, 'Q', Item.fishRaw });
                 GameRegistry.addRecipe(new ItemStack(NaturalisNoriSheet, 9), new Object[] { "SSS", 'S', NaturalisSeaWeed });
+                GameRegistry.addRecipe(new ItemStack(NaturalisPestle, 1), new Object[] { "X X", "XXX", 'X', Block.cobblestone });
                 /*
                  * using another type of loading a recipe because i use
                  * oreDictionary as an item reference.
@@ -323,7 +325,7 @@ public class Naturalis
                 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Item.plateLeather, 1), "X X", "XXX", "XXX", 'X', "itemLeather"));
                 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Item.itemFrame, 1), "***", "*X*", "***", 'X', "itemLeather", '*', "stickWood"));
                 // ADDING WOOD MORTAR RECIPE'S (SAME AS STONE JUST WITH WOOD)
-
+                CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(NaturalisWoodMortar, 1), "  X", " X ", "Y  ", 'X', "stickWood", 'Y', "plankWood"));
                 for (int i = 0; i < NaturalisWoodMortar.getMaxDamage(); i++)
                     {
                         GameRegistry.addShapedRecipe(new ItemStack(NaturalisSalt2, 3), "X", "Y", "Z", 'X', new ItemStack(NaturalisWoodMortar, 1, i), 'Y', NaturalisRawRockSalt, 'Z', NaturalisPestle);
@@ -333,6 +335,7 @@ public class Naturalis
                         GameRegistry.addShapedRecipe(new ItemStack(NaturalisWheatFlour, 1), "X", "Y", "Z", 'X', new ItemStack(NaturalisWoodMortar, 1, i), 'Y', Item.wheat, 'Z', NaturalisPestle);
                     }
                 // ADDING STONE MORTAR RECIPE'S (SAME AS WOOD JUST WITH STONE)
+                CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(NaturalisStoneMortar, 1), "  X", " X ", "Y  ", 'X', "stickWood", 'Y', Block.cobblestone));
                 for (int i = 0; i < NaturalisStoneMortar.getMaxDamage(); i++)
                     {
                         GameRegistry.addShapedRecipe(new ItemStack(NaturalisSalt2, 3), "X", "Y", "Z", 'X', new ItemStack(NaturalisStoneMortar, 1, i), 'Y', NaturalisRawRockSalt, 'Z', NaturalisPestle);
