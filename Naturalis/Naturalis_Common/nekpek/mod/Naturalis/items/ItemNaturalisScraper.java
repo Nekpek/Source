@@ -9,9 +9,6 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.Event.Result;
-import net.minecraftforge.event.entity.player.UseHoeEvent;
 
 public class ItemNaturalisScraper extends ItemAxe
     {
@@ -35,22 +32,9 @@ public class ItemNaturalisScraper extends ItemAxe
                     }
                 else
                     {
-                        UseHoeEvent event = new UseHoeEvent(par2EntityPlayer, par1ItemStack, par3World, par4, par5, par6);
-
-                        if (MinecraftForge.EVENT_BUS.post(event))
-                            {
-                                return false;
-                            }
-
-                        if (event.getResult() == Result.ALLOW)
-                            {
-                                par1ItemStack.damageItem(1, par2EntityPlayer);
-                                return true;
-                            }
 
                         int i1 = par3World.getBlockId(par4, par5, par6);
                         int i2 = par3World.getBlockMetadata(par4, par5, par6);
-                        par3World.getBlockId(par4, par5 + 1, par6);
 
                         if (i1 != Block.wood.blockID)
                             {
