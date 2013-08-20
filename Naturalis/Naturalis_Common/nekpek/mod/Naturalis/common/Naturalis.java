@@ -68,7 +68,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "Naturalis", name = "Naturalis", version = "1.4")
+@Mod(modid = "Naturalis", name = "Naturalis", version = "1.5")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = "Naturalis", packetHandler = NaturalisPackethandler.class)
 public class Naturalis
     {
