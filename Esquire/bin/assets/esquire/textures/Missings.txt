@@ -1,0 +1,4 @@
+2013-08-27 01:42:16 [SEVERE] [Minecraft-Client] Using missing texture, unable to load: esquire:textures/items/SpruceBark.png
+2013-08-27 01:42:16 [SEVERE] [Minecraft-Client] Using missing texture, unable to load: esquire:textures/items/StonePestle.png
+2013-08-27 01:42:16 [SEVERE] [Minecraft-Client] Using missing texture, unable to load: esquire:textures/items/JungleBark.png
+2013-08-27 01:42:16 [SEVERE] [Minecraft-Client] Using missing texture, unable to load: esquire:textures/blocks/JungleBare.png
