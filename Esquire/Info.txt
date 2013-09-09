@@ -15,12 +15,15 @@ From Naturalis:
 [Added] Stone Mortar
 [Added] Pestle
 [Added] Coarse Salt
+[Added] Herbs*
 [Changed] Recipe for Flour
 [Changed] Drop for SaltOre (now drops Coarse Salt)
 [Changed] Cork Wall Rendering. now corners fits the hitbox
 [Changed] Some Textures for Rock Salt and Salt Ore
 [Fixed] Now SeaWeed do not have collision box' (you can move through it)
 [Fixed] Chrash when running mod on server
+
+* Black sunflower, Snowy Mist
 
 
 \____________________________________________________________________/

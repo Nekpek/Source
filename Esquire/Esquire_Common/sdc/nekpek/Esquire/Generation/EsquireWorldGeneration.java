@@ -4,7 +4,9 @@ import java.util.Random;
 
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenDesert;
 import net.minecraft.world.biome.BiomeGenOcean;
+import net.minecraft.world.biome.BiomeGenTaiga;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import sdc.nekpek.Esquire.Blocks.EsquireBlocks;
@@ -36,6 +38,16 @@ public class EsquireWorldGeneration implements IWorldGenerator
                     {
                         Ycoord = random.nextInt(60);
                         new EsquireSeaPleantGen(EsquireBlocks.EsquireSeaWeed.blockID).generate(world, random, Xcoord, Ycoord, Zcoord);
+                    }
+                if (biome instanceof BiomeGenDesert)
+                    {
+                        Ycoord = random.nextInt(255);
+                        new EsquireHerbGen(EsquireBlocks.EsquireHerbs.blockID, 0, 1).generate(world, random, Xcoord, Ycoord, Zcoord);
+                    }
+                if (biome instanceof BiomeGenTaiga)
+                    {
+                        Ycoord = random.nextInt(255);
+                        new EsquireHerbGen(EsquireBlocks.EsquireHerbs.blockID, 1, 1).generate(world, random, Xcoord, Ycoord, Zcoord);
                     }
             }
 

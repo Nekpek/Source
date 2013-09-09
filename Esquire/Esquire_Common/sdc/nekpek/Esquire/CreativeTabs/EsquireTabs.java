@@ -6,4 +6,5 @@ public class EsquireTabs
     {
         public static CreativeTabs EsquireTabItems = new EsquireTabItems(CreativeTabs.getNextID(), "EsquireTabItems");
         public static CreativeTabs EsquireTabBlocks = new EsquireTabBlocks(CreativeTabs.getNextID(), "EsquireTabBlocks");
+        public static CreativeTabs EsquireTabHerbs = new EsquireTabHerbs(CreativeTabs.getNextID(), "EsquireTabHerbs");
     }

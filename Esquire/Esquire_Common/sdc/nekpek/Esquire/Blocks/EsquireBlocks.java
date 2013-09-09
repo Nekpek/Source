@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import sdc.nekpek.Esquire.CreativeTabs.EsquireTabs;
 import sdc.nekpek.Esquire.Entities.EsquireFurnaceTileEntity;
+import sdc.nekpek.Esquire.Items.ItemEsquireHerbs;
 import sdc.nekpek.Esquire.Items.ItemEsquireLogBare;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -20,6 +21,7 @@ public class EsquireBlocks
         public static Block EsquireRottingBark2 = new BlockEsquireRottingBark2(2104, Material.wood).setUnlocalizedName("EsquireRottingBark2");
         public static Block EsquireSaltOre = new BlockEsquireSaltOre(2105, Material.sand).setUnlocalizedName("EsquireSaltOre");
         public static Block EsquireSeaWeed = new BlockEsquireSeaWeed(2106, Material.water).setUnlocalizedName("EsquireSeaWeed");
+        public static Block EsquireHerbs = new BlockEsquireHerbs(2109, Material.plants).setUnlocalizedName("EsquireHerbs");
 
         public static Block EsquirePowerFurnaceIdle = new BlockEsquirePowerFurnace(2107, false).setUnlocalizedName("EsquirePowerFurnaceIdle").setCreativeTab(EsquireTabs.EsquireTabBlocks);
         public static Block EsquirePowerFurnaceLit = new BlockEsquirePowerFurnace(2108, true).setUnlocalizedName("EsquirePowerFurnaceLit");
@@ -48,6 +50,9 @@ public class EsquireBlocks
                 MinecraftForge.setBlockHarvestLevel(EsquireSeaWeed, null, 0);
                 GameRegistry.registerBlock(EsquireSeaWeed, "EsquireSeaWeed");
 
+                MinecraftForge.setBlockHarvestLevel(EsquireHerbs, null, 0);
+                GameRegistry.registerBlock(EsquireHerbs, ItemEsquireHerbs.class, "EsquireHerbs");
+
                 MinecraftForge.setBlockHarvestLevel(EsquirePowerFurnaceIdle, "pickaxe", 0);
                 MinecraftForge.setBlockHarvestLevel(EsquirePowerFurnaceLit, "pickaxe", 0);
                 GameRegistry.registerBlock(EsquirePowerFurnaceIdle, "EsquirePowerFurnaceIdle");
@@ -70,5 +75,7 @@ public class EsquireBlocks
                 LanguageRegistry.addName(EsquireSeaWeed, "Sea Weed");
                 LanguageRegistry.addName(EsquirePowerFurnaceIdle, "Powered Furnace");
                 LanguageRegistry.addName(EsquirePowerFurnaceLit, "*Powered Furnace*");
+                LanguageRegistry.addName(new ItemStack(EsquireHerbs, 1, 0), "Black Sunflower");
+                LanguageRegistry.addName(new ItemStack(EsquireHerbs, 1, 1), "Snowy Mist");
             }
     }
