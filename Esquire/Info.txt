@@ -16,6 +16,7 @@ From Naturalis:
 [Added] Pestle
 [Added] Coarse Salt
 [Added] Herbs*
+[Added] new Creative tab for Herbs
 [Changed] Recipe for Flour
 [Changed] Drop for SaltOre (now drops Coarse Salt)
 [Changed] Cork Wall Rendering. now corners fits the hitbox
