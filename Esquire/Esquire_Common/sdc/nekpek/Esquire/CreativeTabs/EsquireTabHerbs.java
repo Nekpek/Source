@@ -1,7 +1,7 @@
 package sdc.nekpek.Esquire.CreativeTabs;
 
 import net.minecraft.creativetab.CreativeTabs;
-import sdc.nekpek.Esquire.Items.EsquireItems;
+import sdc.nekpek.Esquire.Blocks.EsquireBlocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -18,7 +18,7 @@ public class EsquireTabHerbs extends CreativeTabs
         public int getTabIconItemIndex()
             {
 
-                return EsquireItems.EsquireSalt.itemID;
+                return EsquireBlocks.EsquireHerbs.blockID;
             }
 
         @Override
