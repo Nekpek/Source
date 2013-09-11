@@ -25,7 +25,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = "Esquire", packetHandler = EsquirePacketHandler.class)
 public class Esquire
     {
-
         @Instance
         public static Esquire instance = new Esquire();
         private final GuiHandler guihandler = new GuiHandler();

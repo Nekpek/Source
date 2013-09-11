@@ -28,6 +28,7 @@ public class BlockEsquireRottingBark0 extends Block
         @Override
         public void onBlockAdded(World world, int x, int y, int z)
             {
+
                 world.scheduleBlockUpdate(x, y, z, blockID, 6000);
             }
 
