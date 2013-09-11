@@ -3,6 +3,7 @@ package sdc.nekpek.Esquire.Items;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import sdc.nekpek.Esquire.Blocks.BlockEsquireHerbs;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class EsquireItems
@@ -28,6 +29,7 @@ public class EsquireItems
         public static Item EsquireDough = new ItemEsquireDough(2319).setUnlocalizedName("EsquireDough");
         public static Item EsquireWoodPestle = new ItemEsquireWoodPestle(2320).setUnlocalizedName("EsquireWoodPestle");
         public static Item EsquireStonePestle = new ItemEsquireStonePestle(2321).setUnlocalizedName("EsquireStonePestle");
+        public static Item EsquireHerbLeaf = new ItemEsquireHerbLeaf(2322).setUnlocalizedName("EsquireHerbLeaf");
 
         public static void ItemNames()
             {
@@ -60,6 +62,11 @@ public class EsquireItems
                 LanguageRegistry.addName(EsquireStonePestle, "Stone Pestle");
                 LanguageRegistry.addName(EsquireDough, "Dough");
                 LanguageRegistry.addName(EsquireFlour, "Flour");
+
+                for (int i = 0; i < BlockEsquireHerbs.HerbAmounts; i++)
+                    {
+                        LanguageRegistry.addName((new ItemStack(EsquireHerbLeaf, 1, i)), BlockEsquireHerbs.HerbType[i] + " Leaf");
+                    }
 
             }
     }

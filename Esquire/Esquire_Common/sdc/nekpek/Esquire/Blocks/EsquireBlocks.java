@@ -75,7 +75,10 @@ public class EsquireBlocks
                 LanguageRegistry.addName(EsquireSeaWeed, "Sea Weed");
                 LanguageRegistry.addName(EsquirePowerFurnaceIdle, "Powered Furnace");
                 LanguageRegistry.addName(EsquirePowerFurnaceLit, "*Powered Furnace*");
-                LanguageRegistry.addName(new ItemStack(EsquireHerbs, 1, 0), "Black Sunflower");
-                LanguageRegistry.addName(new ItemStack(EsquireHerbs, 1, 1), "Snowy Mist");
+
+                for (int i = 0; i < BlockEsquireHerbs.HerbAmounts; i++)
+                    {
+                        LanguageRegistry.addName((new ItemStack(EsquireHerbs, 1, i)), BlockEsquireHerbs.HerbType[i]);
+                    }
             }
     }
