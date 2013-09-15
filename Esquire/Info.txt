@@ -18,6 +18,7 @@ From Naturalis:
 [Added] Herbs
 [Added] Herb Leaves.
 [Added] new Creative tab for Herbs
+[Added] Potions
 [Changed] Recipe for Flour
 [Changed] Drop for SaltOre (now drops Coarse Salt)
 [Changed] Cork Wall Rendering. now corners fits the hitbox
