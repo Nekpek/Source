@@ -1,11 +1,13 @@
 package sdc.nekpek.Esquire.Blocks;
 
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
@@ -16,6 +18,7 @@ import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
 import sdc.nekpek.Esquire.CreativeTabs.EsquireTabs;
+import sdc.nekpek.Esquire.Items.EsquireItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -159,4 +162,35 @@ public class BlockEsquireHerbs extends Block implements IPlantable
             {
                 return null;
             }
+
+        @Override
+        public int quantityDropped(Random par1Random)
+            {
+                return 3;
+            }
+
+        @Override
+        public int idDropped(int par1, Random par2Random, int par3)
+            {
+                return EsquireItems.EsquireHerbLeaf.itemID;
+            }
+
+        @Override
+        public int damageDropped(int par1)
+            {
+                return par1;
+            }
+
+        @Override
+        public void updateTick(World world, int x, int y, int z, Random par5Random)
+            {
+                if (world.isRemote == false)
+                    {
+                        EntityItem entityitem = new EntityItem(world, x, y, z, new ItemStack(EsquireItems.EsquireHerbLeaf, 1, this.getPlantMetadata(world, x, y, z)));
+                        entityitem.delayBeforeCanPickup = 10;
+                        world.spawnEntityInWorld(entityitem);
+                    }
+
+            }
+
     }
