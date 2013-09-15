@@ -30,6 +30,8 @@ public class EsquireItems
         public static Item EsquireWoodPestle = new ItemEsquireWoodPestle(2320).setUnlocalizedName("EsquireWoodPestle");
         public static Item EsquireStonePestle = new ItemEsquireStonePestle(2321).setUnlocalizedName("EsquireStonePestle");
         public static Item EsquireHerbLeaf = new ItemEsquireHerbLeaf(2322).setUnlocalizedName("EsquireHerbLeaf");
+        public static Item EsquireHerbPowder = new ItemEsquireHerbPowder(2323).setUnlocalizedName("EsquireHerbPowder");
+        public static Item EsquirePotions = new ItemEsquirePotions(2324).setUnlocalizedName("EsquirePotions");
 
         public static void ItemNames()
             {
@@ -66,6 +68,14 @@ public class EsquireItems
                 for (int i = 0; i < BlockEsquireHerbs.HerbAmounts; i++)
                     {
                         LanguageRegistry.addName((new ItemStack(EsquireHerbLeaf, 1, i)), BlockEsquireHerbs.HerbType[i] + " Leaf");
+                    }
+                for (int i = 0; i < BlockEsquireHerbs.HerbAmounts; i++)
+                    {
+                        LanguageRegistry.addName((new ItemStack(EsquireHerbPowder, 1, i)), "Powdered " + BlockEsquireHerbs.HerbType[i]);
+                    }
+                for (int i = 0; i < ItemEsquirePotions.PotionsType.length; i++)
+                    {
+                        LanguageRegistry.addName((new ItemStack(EsquirePotions, 1, i)), ItemEsquirePotions.PotionsType[i] + " Brew");
                     }
 
             }
