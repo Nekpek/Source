@@ -59,6 +59,7 @@ public class Esquire
 
                 EsquireCooknCrafts.OreDic();
                 EsquireCooknCrafts.Craftings();
+                EsquireCooknCrafts.Cookings();
                 GameRegistry.registerCraftingHandler(new CraftingHandler());
 
             }

@@ -7,6 +7,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import sdc.nekpek.Esquire.Blocks.BlockEsquireHerbs;
 import sdc.nekpek.Esquire.Blocks.EsquireBlocks;
 import sdc.nekpek.Esquire.Items.EsquireItems;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -62,6 +63,16 @@ public class EsquireCooknCrafts
                 GameRegistry.addShapelessRecipe(new ItemStack(EsquireBlocks.EsquireRottingBark0, 1), new ItemStack(EsquireItems.EsquireBark, 1, 2), Item.bucketWater);
                 GameRegistry.addShapelessRecipe(new ItemStack(EsquireItems.EsquireTarBucket, 1), EsquireBlocks.EsquireRottingBark0, Item.bucketWater);
 
+                // SINGLE INGREDIENT POTIONS
+                GameRegistry.addShapelessRecipe(new ItemStack(EsquireItems.EsquirePotions, 1, 0), new ItemStack(EsquireItems.EsquireHerbPowder, 1, 0), Item.potion);
+                GameRegistry.addShapelessRecipe(new ItemStack(EsquireItems.EsquirePotions, 1, 1), new ItemStack(EsquireItems.EsquireHerbPowder, 1, 1), Item.potion);
+                // DUEL INGREDIENT POTIONS
+                // Potion 1: START :
+                GameRegistry.addShapelessRecipe(new ItemStack(EsquireItems.EsquirePotions, 1, 2), new ItemStack(EsquireItems.EsquireHerbPowder, 1, 0), new ItemStack(EsquireItems.EsquireHerbPowder, 1, 1), Item.potion);
+                GameRegistry.addShapelessRecipe(new ItemStack(EsquireItems.EsquirePotions, 1, 2), new ItemStack(EsquireItems.EsquirePotions, 1, 0), new ItemStack(EsquireItems.EsquireHerbPowder, 1, 1));
+                GameRegistry.addShapelessRecipe(new ItemStack(EsquireItems.EsquirePotions, 1, 2), new ItemStack(EsquireItems.EsquireHerbPowder, 1, 0), new ItemStack(EsquireItems.EsquirePotions, 1, 1));
+                // Potion 1: END :
+
                 // REMOVING VANILLA RECIPES.
                 CraftingManager.getInstance().getRecipeList().remove(Item.book);
                 CraftingManager.getInstance().getRecipeList().remove(Item.legsLeather);
@@ -83,20 +94,25 @@ public class EsquireCooknCrafts
                 for (int i = 0; i < EsquireItems.EsquireWoodPestle.getMaxDamage(); i++)
                     {
                         GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireSalt, 3, 1), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireWoodPestle, 1, i), 'Y', new ItemStack(EsquireItems.EsquireSalt, 1, 2), 'Z', Block.cobblestone);
-                    }
-                for (int i = 0; i < EsquireItems.EsquireWoodPestle.getMaxDamage(); i++)
-                    {
                         GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireFlour, 1), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireWoodPestle, 1, i), 'Y', Item.wheat, 'Z', Block.cobblestone);
+                        for (int i2 = 0; i2 < BlockEsquireHerbs.HerbAmounts; i2++)
+                            {
+                                GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireHerbPowder, 1, i2), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireWoodPestle, 1, i), 'Y', new ItemStack(EsquireItems.EsquireHerbLeaf, 1, i2), 'Z', Block.cobblestone);
+
+                            }
                     }
                 // ADDING STONE MORTAR RECIPE'S (SAME AS WOOD JUST WITH STONE)
                 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(EsquireItems.EsquireStonePestle, 1), "  X", " X ", "Y  ", 'X', "stickWood", 'Y', "plankWood"));
                 for (int i = 0; i < EsquireItems.EsquireStonePestle.getMaxDamage(); i++)
                     {
                         GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireSalt, 4, 1), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireStonePestle, 1, i), 'Y', new ItemStack(EsquireItems.EsquireSalt, 1, 2), 'Z', Block.cobblestone);
-                    }
-                for (int i = 0; i < EsquireItems.EsquireStonePestle.getMaxDamage(); i++)
-                    {
                         GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireFlour, 2), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireStonePestle, 1, i), 'Y', Item.wheat, 'Z', Block.cobblestone);
+
+                        for (int i2 = 0; i2 < BlockEsquireHerbs.HerbAmounts; i2++)
+                            {
+                                GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireHerbPowder, 2, i2), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireStonePestle, 1, i), 'Y', new ItemStack(EsquireItems.EsquireHerbLeaf, 1, i2), 'Z', Block.cobblestone);
+
+                            }
                     }
             }
     }
