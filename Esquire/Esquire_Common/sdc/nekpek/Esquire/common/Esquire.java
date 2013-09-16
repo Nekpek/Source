@@ -4,6 +4,7 @@ import net.minecraftforge.common.MinecraftForge;
 import sdc.nekpek.Esquire.Blocks.EsquireBlocks;
 import sdc.nekpek.Esquire.CooknCraft.CraftingHandler;
 import sdc.nekpek.Esquire.CooknCraft.EsquireCooknCrafts;
+import sdc.nekpek.Esquire.CooknCraft.EsquireFuel;
 import sdc.nekpek.Esquire.CreativeTabs.EsquireTabs;
 import sdc.nekpek.Esquire.Generation.WorldGenerations;
 import sdc.nekpek.Esquire.Gui.GuiHandler;
@@ -59,6 +60,7 @@ public class Esquire
 
                 EsquireCooknCrafts.OreDic();
                 EsquireCooknCrafts.Craftings();
+                GameRegistry.registerFuelHandler(new EsquireFuel());
                 EsquireCooknCrafts.Cookings();
                 GameRegistry.registerCraftingHandler(new CraftingHandler());
 
