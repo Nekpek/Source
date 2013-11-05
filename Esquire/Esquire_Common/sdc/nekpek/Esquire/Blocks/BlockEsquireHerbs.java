@@ -33,7 +33,7 @@ public class BlockEsquireHerbs extends Block implements IPlantable
                 this.setTickRandomly(true);
             }
 
-        public static final String[] HerbType = new String[] { "Black Sun Flower", "Snowy Mist" };
+        public static final String[] HerbType = new String[] { "Black Sun Flower", "Snowy Mist", "Ender Rose" };
         public static int HerbAmounts = HerbType.length;
         @SideOnly(Side.CLIENT)
         private Icon[] iconArray;

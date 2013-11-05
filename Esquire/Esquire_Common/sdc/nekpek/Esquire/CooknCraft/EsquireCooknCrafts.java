@@ -7,7 +7,6 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import sdc.nekpek.Esquire.Blocks.BlockEsquireHerbs;
 import sdc.nekpek.Esquire.Blocks.EsquireBlocks;
 import sdc.nekpek.Esquire.Items.EsquireItems;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -49,14 +48,19 @@ public class EsquireCooknCrafts
                 GameRegistry.addRecipe(new ItemStack(EsquireItems.EsquireSushi, 1, 0), new Object[] { "NQN", 'N', EsquireItems.EsquireNoriSheet, 'Q', EsquireItems.EsquireRawSquid });
                 GameRegistry.addRecipe(new ItemStack(EsquireItems.EsquireSushi, 1, 1), new Object[] { "NQN", 'N', EsquireItems.EsquireNoriSheet, 'Q', Item.fishRaw });
                 GameRegistry.addRecipe(new ItemStack(EsquireItems.EsquireNoriSheet, 9), new Object[] { "SSS", 'S', EsquireBlocks.EsquireSeaWeed });
+                GameRegistry.addRecipe(new ItemStack(EsquireBlocks.EsquireMortarStone, 1), new Object[] { "X X", "X X", " X ", 'X', Block.cobblestone });
+                GameRegistry.addRecipe(new ItemStack(Item.enderPearl, 1), new Object[] { "XXX", "XXX", "XXX", 'X', new ItemStack(EsquireItems.EsquireHerbPowder, 1, 2) });
+
                 /*
                  * using another type of loading a recipe because i use
                  * oreDictionary as an item reference.
                  */
+                CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(EsquireItems.EsquireWoodPestle, 1), new Object[] { "  X", " X ", "Y  ", 'X', "stickWood", 'Y', "plankWood" }));
+                CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(EsquireItems.EsquireStonePestle, 1), new Object[] { "  X", " X ", "Y  ", 'X', "stickWood", 'Y', Block.stone }));
+
                 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(EsquireItems.EsquireSaltedMeat, 1, 1), Item.porkRaw, "itemSalt"));
                 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(EsquireItems.EsquireSaltedMeat, 1, 0), Item.beefRaw, "itemSalt"));
                 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(EsquireItems.EsquireDough, 5), EsquireItems.EsquireFlour, Item.bucketWater, "itemSalt"));
-
                 // ADDING SHAPELESS RECIPIES
                 GameRegistry.addShapelessRecipe(new ItemStack(EsquireItems.EsquireChocoBucket, 1), Item.sugar, new ItemStack(Item.dyePowder, 1, 3), Item.bucketMilk);
                 GameRegistry.addShapelessRecipe(new ItemStack(EsquireItems.EsquireChocoMilk, 3), Item.glassBottle, Item.glassBottle, Item.glassBottle, EsquireItems.EsquireChocoBucket);
@@ -89,30 +93,6 @@ public class EsquireCooknCrafts
                 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Item.helmetLeather, 1), "XXX", "X X", 'X', "itemLeather"));
                 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Item.plateLeather, 1), "X X", "XXX", "XXX", 'X', "itemLeather"));
                 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Item.itemFrame, 1), "***", "*X*", "***", 'X', "itemLeather", '*', "stickWood"));
-                // ADDING WOOD MORTAR RECIPE'S (SAME AS STONE JUST WITH WOOD)
-                CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(EsquireItems.EsquireWoodPestle, 1), "  X", " X ", "Y  ", 'X', "stickWood", 'Y', "plankWood"));
-                for (int i = 0; i < EsquireItems.EsquireWoodPestle.getMaxDamage(); i++)
-                    {
-                        GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireSalt, 3, 1), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireWoodPestle, 1, i), 'Y', new ItemStack(EsquireItems.EsquireSalt, 1, 2), 'Z', Block.cobblestone);
-                        GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireFlour, 1), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireWoodPestle, 1, i), 'Y', Item.wheat, 'Z', Block.cobblestone);
-                        for (int i2 = 0; i2 < BlockEsquireHerbs.HerbAmounts; i2++)
-                            {
-                                GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireHerbPowder, 1, i2), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireWoodPestle, 1, i), 'Y', new ItemStack(EsquireItems.EsquireHerbLeaf, 1, i2), 'Z', Block.cobblestone);
 
-                            }
-                    }
-                // ADDING STONE MORTAR RECIPE'S (SAME AS WOOD JUST WITH STONE)
-                CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(EsquireItems.EsquireStonePestle, 1), "  X", " X ", "Y  ", 'X', "stickWood", 'Y', "plankWood"));
-                for (int i = 0; i < EsquireItems.EsquireStonePestle.getMaxDamage(); i++)
-                    {
-                        GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireSalt, 4, 1), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireStonePestle, 1, i), 'Y', new ItemStack(EsquireItems.EsquireSalt, 1, 2), 'Z', Block.cobblestone);
-                        GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireFlour, 2), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireStonePestle, 1, i), 'Y', Item.wheat, 'Z', Block.cobblestone);
-
-                        for (int i2 = 0; i2 < BlockEsquireHerbs.HerbAmounts; i2++)
-                            {
-                                GameRegistry.addShapedRecipe(new ItemStack(EsquireItems.EsquireHerbPowder, 2, i2), "X", "Y", "Z", 'X', new ItemStack(EsquireItems.EsquireStonePestle, 1, i), 'Y', new ItemStack(EsquireItems.EsquireHerbLeaf, 1, i2), 'Z', Block.cobblestone);
-
-                            }
-                    }
             }
     }
