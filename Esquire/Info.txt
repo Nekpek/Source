@@ -11,8 +11,8 @@ ChangeLog:
 ______________________________________________________________________
 
 From Naturalis:
-[Added] Wood Mortar
-[Added] Stone Mortar
+[Added] Wood Mortar-Pestle
+[Added] Stone Mortar-Pestle
 [Added] Pestle
 [Added] Coarse Salt
 [Added] Herbs
@@ -25,6 +25,23 @@ From Naturalis:
 [Changed] Some Textures for Rock Salt and Salt Ore
 [Fixed] Now SeaWeed do not have collision box' (you can move through it)
 [Fixed] Chrash when running mod on server
+
+
+V 1.0.1
+[Added] Bark to Fuel List
+[Fixed] Tar as Fuel
+
+V 2.0-preview
+[Added] Added Stone Mortar
+[Changed] Recipe's using Pestle's
+[Fixed] Code HickUps
+
+V 2.0
+[Added] New Herb; Ender Rose.
+[Changed] Bark now drops on the ground instead of Spawning inside you inventory.
+[Removed] Shift Click option for my blocks. (Unsure how it works for now need more experiemting)
+
+
 
 
 

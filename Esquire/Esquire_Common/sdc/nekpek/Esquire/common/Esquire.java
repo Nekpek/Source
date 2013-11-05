@@ -22,7 +22,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "Esquire", name = "Esquire", version = "1.0.0")
+@Mod(modid = "Esquire", name = "Esquire", version = "2.0-PreView")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = "Esquire", packetHandler = EsquirePacketHandler.class)
 public class Esquire
     {

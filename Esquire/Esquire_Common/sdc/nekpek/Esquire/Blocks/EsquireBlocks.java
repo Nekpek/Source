@@ -6,8 +6,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import sdc.nekpek.Esquire.CreativeTabs.EsquireTabs;
 import sdc.nekpek.Esquire.Entities.EsquireFurnaceTileEntity;
+import sdc.nekpek.Esquire.Entities.EsquireMortarTileEntity;
 import sdc.nekpek.Esquire.Items.ItemEsquireHerbs;
 import sdc.nekpek.Esquire.Items.ItemEsquireLogBare;
+import sdc.nekpek.Esquire.Items.ItemEsquireMortarStone;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -25,6 +27,8 @@ public class EsquireBlocks
 
         public static Block EsquirePowerFurnaceIdle = new BlockEsquirePowerFurnace(2107, false).setUnlocalizedName("EsquirePowerFurnaceIdle").setCreativeTab(EsquireTabs.EsquireTabBlocks);
         public static Block EsquirePowerFurnaceLit = new BlockEsquirePowerFurnace(2108, true).setUnlocalizedName("EsquirePowerFurnaceLit");
+
+        public static Block EsquireMortarStone = new BlockEsquireMortarStone(2110).setUnlocalizedName("EsquireStoneMortar");
 
         public static void Blocks()
             {
@@ -53,6 +57,10 @@ public class EsquireBlocks
                 MinecraftForge.setBlockHarvestLevel(EsquireHerbs, null, 0);
                 GameRegistry.registerBlock(EsquireHerbs, ItemEsquireHerbs.class, "EsquireHerbs");
 
+                MinecraftForge.setBlockHarvestLevel(EsquireMortarStone, "pickaxe", 0);
+                GameRegistry.registerBlock(EsquireMortarStone, ItemEsquireMortarStone.class, "EsquireMortarStone");
+                GameRegistry.registerTileEntity(EsquireMortarTileEntity.class, "TileEntityEsquireMortar");
+
                 MinecraftForge.setBlockHarvestLevel(EsquirePowerFurnaceIdle, "pickaxe", 0);
                 MinecraftForge.setBlockHarvestLevel(EsquirePowerFurnaceLit, "pickaxe", 0);
                 GameRegistry.registerBlock(EsquirePowerFurnaceIdle, "EsquirePowerFurnaceIdle");
@@ -75,6 +83,7 @@ public class EsquireBlocks
                 LanguageRegistry.addName(EsquireSeaWeed, "Sea Weed");
                 LanguageRegistry.addName(EsquirePowerFurnaceIdle, "Powered Furnace");
                 LanguageRegistry.addName(EsquirePowerFurnaceLit, "*Powered Furnace*");
+                LanguageRegistry.addName(EsquireMortarStone, "Stone Mortar");
 
                 for (int i = 0; i < BlockEsquireHerbs.HerbAmounts; i++)
                     {
