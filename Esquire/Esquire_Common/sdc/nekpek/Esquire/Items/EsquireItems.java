@@ -8,6 +8,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class EsquireItems
     {
+
         public static Item EsquireSalt = new ItemEsquireSalt(2300).setUnlocalizedName("EsquireSalt");
         public static Item EsquireBucketSalt = new ItemEsquireBucketSalt(2301).setUnlocalizedName("EsquireBucketSalt");
         public static Item EsquireLeather = new ItemEsquireLeather(2302).setUnlocalizedName("EsquireLeather");

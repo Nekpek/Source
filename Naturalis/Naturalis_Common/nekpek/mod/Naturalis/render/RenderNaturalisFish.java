@@ -40,7 +40,7 @@ public class RenderNaturalisFish extends RenderLiving
             }
 
         @Override
-        protected ResourceLocation func_110775_a(Entity entity)
+        protected ResourceLocation getEntityTexture(Entity entity)
             {
                 ResourceLocation Naturalis = new ResourceLocation("naturalis", "textures/entity/fish.png");
                 return Naturalis;

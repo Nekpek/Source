@@ -18,6 +18,7 @@ public class itemEsquireScraper extends ItemAxe
                 super(par1, par2EnumToolMaterial);
                 this.setCreativeTab(EsquireTabs.EsquireTabItems);
                 setMaxStackSize(1);
+
             }
 
         @Override
@@ -45,11 +46,12 @@ public class itemEsquireScraper extends ItemAxe
                             }
                         else
                             {
+
                                 if (i2 == 0)
                                     {
                                         Block block = EsquireBlocks.EsquireLogBare;
                                         par3World.playSoundEffect(par4 + 0.5F, par5 + 0.5F, par6 + 0.5F, block.stepSound.getStepSound(), (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
-                                        par2EntityPlayer.inventory.addItemStackToInventory(new ItemStack(EsquireItems.EsquireBark, 1, i2));
+                                        par2EntityPlayer.dropPlayerItem(new ItemStack(EsquireItems.EsquireBark, 1, i2));
 
                                         if (par3World.isRemote)
                                             {
@@ -68,7 +70,7 @@ public class itemEsquireScraper extends ItemAxe
                                         {
                                             Block block = EsquireBlocks.EsquireLogBare;
                                             par3World.playSoundEffect(par4 + 0.5F, par5 + 0.5F, par6 + 0.5F, block.stepSound.getStepSound(), (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
-                                            par2EntityPlayer.inventory.addItemStackToInventory(new ItemStack(EsquireItems.EsquireBark, 1, i2));
+                                            par2EntityPlayer.dropPlayerItem(new ItemStack(EsquireItems.EsquireBark, 1, i2));
 
                                             if (par3World.isRemote)
                                                 {
@@ -86,7 +88,7 @@ public class itemEsquireScraper extends ItemAxe
                                             {
                                                 Block block = EsquireBlocks.EsquireLogBare;
                                                 par3World.playSoundEffect(par4 + 0.5F, par5 + 0.5F, par6 + 0.5F, block.stepSound.getStepSound(), (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
-                                                par2EntityPlayer.inventory.addItemStackToInventory(new ItemStack(EsquireItems.EsquireBark, 1, i2));
+                                                par2EntityPlayer.dropPlayerItem(new ItemStack(EsquireItems.EsquireBark, 1, i2));
 
                                                 if (par3World.isRemote)
                                                     {
@@ -105,7 +107,7 @@ public class itemEsquireScraper extends ItemAxe
                                                 {
                                                     Block block = EsquireBlocks.EsquireLogBare;
                                                     par3World.playSoundEffect(par4 + 0.5F, par5 + 0.5F, par6 + 0.5F, block.stepSound.getStepSound(), (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
-                                                    par2EntityPlayer.inventory.addItemStackToInventory(new ItemStack(EsquireItems.EsquireBark, 1, i2));
+                                                    par2EntityPlayer.dropPlayerItem(new ItemStack(EsquireItems.EsquireBark, 1, i2));
 
                                                     if (par3World.isRemote)
                                                         {
@@ -124,6 +126,6 @@ public class itemEsquireScraper extends ItemAxe
                                                 }
                             }
                     }
-            }
 
+            }
     }

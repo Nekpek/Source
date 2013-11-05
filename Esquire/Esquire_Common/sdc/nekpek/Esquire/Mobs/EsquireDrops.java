@@ -22,6 +22,7 @@ public class EsquireDrops
                                       // (0.25D = 25%, 1D = 100%, etc.);
                                         event.entityLiving.dropItem(EsquireItems.EsquireRawSquid.itemID, 1);
                                     }
+
                             }
                     }
             }

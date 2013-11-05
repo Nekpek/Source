@@ -40,7 +40,7 @@ public class EsquireRenderFish extends RenderLiving
             }
 
         @Override
-        protected ResourceLocation func_110775_a(Entity entity)
+        protected ResourceLocation getEntityTexture(Entity entity)
             {
                 ResourceLocation Esquire = new ResourceLocation("esquire", "textures/entity/fish.png");
                 return Esquire;

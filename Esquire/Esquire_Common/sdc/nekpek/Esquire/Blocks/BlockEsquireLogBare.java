@@ -81,20 +81,6 @@ public class BlockEsquireLogBare extends BlockRotatedPillar
                     }
             }
 
-        @Override
-        @SideOnly(Side.CLIENT)
-        protected Icon func_111048_c(int par1)
-            {
-                return this.field_111052_c[par1];
-            }
-
-        @Override
-        @SideOnly(Side.CLIENT)
-        protected Icon func_111049_d(int par1)
-            {
-                return this.tree_top[par1];
-            }
-
         /**
          * returns a number between 0 and 3
          */
@@ -156,6 +142,20 @@ public class BlockEsquireLogBare extends BlockRotatedPillar
         public boolean isOpaqueCube()
             {
                 return false;
+            }
+
+        @Override
+        @SideOnly(Side.CLIENT)
+        protected Icon getSideIcon(int par1)
+            {
+                return this.field_111052_c[par1];
+            }
+
+        @Override
+        @SideOnly(Side.CLIENT)
+        protected Icon getEndIcon(int par1)
+            {
+                return this.tree_top[par1];
             }
 
     }
